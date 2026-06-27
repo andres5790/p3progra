@@ -1,25 +1,47 @@
+import java.time.LocalDate;
+
 public class Multas {
+    private final int id;
     private double precio;
     private String motivo;
-    private  Vehiculo vehiculo;
-    private  Empleado empleado;
-    private  int id;
+    private Vehiculo vehiculo;
+    private Empleado empleado;
+    private final LocalDate fecha;
 
-    public Multas(double precio, String motivo, Vehiculo vehiculo, Empleado empleado,int id) {
+    public Multas(double precio, String motivo, Vehiculo vehiculo, Empleado empleado, int id) {
+        this(precio, motivo, vehiculo, empleado, id, LocalDate.now());
+    }
+
+    public Multas(double precio, String motivo, Vehiculo vehiculo, Empleado empleado, int id, LocalDate fecha) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("El identificador de la multa debe ser positivo.");
+        }
+        if (!ValidationUtils.isValidMonto(precio)) {
+            throw new IllegalArgumentException("El precio de la multa no puede ser negativo.");
+        }
+        if (motivo == null || motivo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El motivo de la multa no puede estar vacío.");
+        }
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("La multa debe asociarse a un vehículo.");
+        }
+        if (empleado == null) {
+            throw new IllegalArgumentException("La multa debe registrar un empleado.");
+        }
+        if (fecha == null) {
+            throw new IllegalArgumentException("La fecha de la multa no puede ser nula.");
+        }
+
+        this.id = id;
         this.precio = precio;
-        this.motivo = motivo;
+        this.motivo = motivo.trim();
         this.vehiculo = vehiculo;
         this.empleado = empleado;
-        this.id=id;
-
+        this.fecha = fecha;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public double getPrecio() {
@@ -27,6 +49,9 @@ public class Multas {
     }
 
     public void setPrecio(double precio) {
+        if (!ValidationUtils.isValidMonto(precio)) {
+            throw new IllegalArgumentException("El precio de la multa no puede ser negativo.");
+        }
         this.precio = precio;
     }
 
@@ -35,7 +60,10 @@ public class Multas {
     }
 
     public void setMotivo(String motivo) {
-        this.motivo = motivo;
+        if (motivo == null || motivo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El motivo de la multa no puede estar vacío.");
+        }
+        this.motivo = motivo.trim();
     }
 
     public Vehiculo getVehiculo() {
@@ -43,6 +71,9 @@ public class Multas {
     }
 
     public void setVehiculo(Vehiculo vehiculo) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("La multa debe asociarse a un vehículo.");
+        }
         this.vehiculo = vehiculo;
     }
 
@@ -51,17 +82,25 @@ public class Multas {
     }
 
     public void setEmpleado(Empleado empleado) {
+        if (empleado == null) {
+            throw new IllegalArgumentException("La multa debe registrar un empleado.");
+        }
         this.empleado = empleado;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
     }
 
     @Override
     public String toString() {
         return "Multas{" +
-                "precio=" + precio +
+                "id=" + id +
+                ", precio=" + precio +
                 ", motivo='" + motivo + '\'' +
-                ", vehiculo=" + vehiculo +
-                ", empleado=" + empleado +
-                ", id=" + id +
+                ", vehiculo=" + vehiculo.getPlaca() +
+                ", empleado=" + empleado.getNombre() +
+                ", fecha=" + fecha +
                 '}';
     }
 }

@@ -1,31 +1,35 @@
-public class Nodovehiculo {
-    Vehiculo vehiculo;
-    Nodovehiculo izq;
-    Nodovehiculo der;
+public class NodoVehiculo {
+    private Vehiculo vehiculo;
+    private NodoVehiculo izq;
+    private NodoVehiculo der;
 
-    public Nodovehiculo(Vehiculo vehiculo) {
+    public NodoVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
-        this.der=null;
-        this.izq=null;
+        this.izq = null;
+        this.der = null;
     }
 
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
 
-    public Nodovehiculo getIzq() {
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public NodoVehiculo getIzq() {
         return izq;
     }
 
-    public Nodovehiculo getDer() {
+    public NodoVehiculo getDer() {
         return der;
     }
 
-    public void setDer(Nodovehiculo der) {
+    public void setDer(NodoVehiculo der) {
         this.der = der;
     }
 
-    public void setIzq(Nodovehiculo izq) {
+    public void setIzq(NodoVehiculo izq) {
         this.izq = izq;
     }
 }

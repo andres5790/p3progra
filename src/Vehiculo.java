@@ -1,22 +1,31 @@
-public class Vehiculo  {
-    private String placa;
-    private int anio;
-    private  Ciudadano propietario;
-    private int totalmultas;
+import java.util.Collections;
+import java.util.List;
 
-    public Vehiculo(String placa, int anio, Ciudadano propietario, int totalmultas) {
-        this.placa = placa;
+public class Vehiculo {
+    private final String placa;
+    private int anio;
+    private Ciudadano propietario;
+    private final MultaHistory historialMultas;
+
+    public Vehiculo(String placa, int anio, Ciudadano propietario) {
+        if (!ValidationUtils.isValidPlaca(placa)) {
+            throw new IllegalArgumentException("Placa inválida. El formato válido es ABC-1234.");
+        }
+        if (!ValidationUtils.isValidAnio(anio)) {
+            throw new IllegalArgumentException("Año inválido para el vehículo.");
+        }
+        if (propietario == null) {
+            throw new IllegalArgumentException("El vehículo debe tener un propietario.");
+        }
+
+        this.placa = placa.trim().toUpperCase();
         this.anio = anio;
         this.propietario = propietario;
-        this.totalmultas = totalmultas;
+        this.historialMultas = new MultaHistory();
     }
 
     public String getPlaca() {
         return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public int getAnio() {
@@ -24,6 +33,9 @@ public class Vehiculo  {
     }
 
     public void setAnio(int anio) {
+        if (!ValidationUtils.isValidAnio(anio)) {
+            throw new IllegalArgumentException("Año inválido para el vehículo.");
+        }
         this.anio = anio;
     }
 
@@ -32,15 +44,37 @@ public class Vehiculo  {
     }
 
     public void setPropietario(Ciudadano propietario) {
+        if (propietario == null) {
+            throw new IllegalArgumentException("El vehículo debe tener un propietario.");
+        }
         this.propietario = propietario;
     }
 
     public int getTotalmultas() {
-        return totalmultas;
+        return historialMultas.size();
     }
 
-    public void setTotalmultas(int totalmultas) {
-        this.totalmultas = totalmultas;
+    public void agregarMulta(Multas multa) {
+        if (multa == null) {
+            throw new IllegalArgumentException("La multa no puede ser nula.");
+        }
+        historialMultas.add(multa);
+    }
+
+    public boolean eliminarMulta(int multaId) {
+        return historialMultas.removeById(multaId);
+    }
+
+    public boolean actualizarMulta(int multaId, double nuevoPrecio, String nuevoMotivo) {
+        return historialMultas.updateById(multaId, nuevoPrecio, nuevoMotivo);
+    }
+
+    public Multas buscarMulta(int multaId) {
+        return historialMultas.findById(multaId);
+    }
+
+    public List<Multas> getHistorialMultas() {
+        return Collections.unmodifiableList(historialMultas.toList());
     }
 
     @Override
@@ -49,7 +83,7 @@ public class Vehiculo  {
                 "placa='" + placa + '\'' +
                 ", anio=" + anio +
                 ", propietario=" + propietario.getNombre() +
-                ", totalmultas=" + totalmultas +
+                ", totalMultas=" + getTotalmultas() +
                 '}';
     }
 }

@@ -1,139 +1,74 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Modulo3 {
 
-       private Nodomulta raiz;
-       public  Modulo3(){
-           raiz=null;
-       }
+    /**
+     * Módulo 3: Historial de Infracciones usando lista enlazada interna.
+     * Cada vehículo almacena su propio historial de multas en una lista enlazada.
+     *
+     * Operaciones:
+     * - Create: insertarMulta -> O(1) amortizado.
+     * - Read: generarReporteHistorial -> O(n).
+     * - Update: actualizarMulta -> O(n).
+     * - Delete: eliminarMulta -> O(n).
+     */
 
-    private void  insertar(Nodomulta actual, Multas multa){
-        if(multa.getId()<actual.getMulta().getId()){
-            if(actual.getIzq()==null)//no hay rama
-            {
-                actual.setIzq(new Nodomulta(multa));
-            }else{ //hay rama
-                insertar(actual.getIzq(),multa);
-            }
-        }else{
-            if(actual.getDer()==null){
-                actual.setDer(new Nodomulta(multa));
-            }else{
-                insertar(actual.getDer(),multa);
-            }
-
-
+    public boolean insertarMulta(Vehiculo vehiculo, Multas multa) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("El vehículo no puede ser nulo.");
         }
-    }
-
-    public void insertar(Multas multa){
-        if(raiz==null){
-            raiz=new Nodomulta(multa);
-        }else{
-            insertar(raiz,multa);
-        }
-    }
-
-    //generar reporte de listas
-    public String inOrden(){
-        if(raiz==null)
-            return "No hay datos";
-        else
-            return inOrden(raiz);
-    }
-
-    public String inOrden(Nodomulta actual){
-        if(actual!=null){
-            return inOrden(actual.getIzq())+actual.getMulta().toString()
-                    +inOrden(actual.getDer());
-        }
-        return " ";
-    }
-
-   public  boolean actualizar( int id,double nprecio,String nmotivo,boolean cambiarp,boolean cambiarm){
-           return  actualizar(raiz,id,nprecio,nmotivo,cambiarp,cambiarm);
-
-   }
-
-   private boolean actualizar(Nodomulta actual,int id,double nprecio,String nmotivo,boolean cambiarp,boolean cambiarm){
-           if (actual==null){
-               return false;
-           }
-           if (id==actual.getMulta().getId()){
-               if (cambiarp && cambiarm){
-                   actual.getMulta().setPrecio(nprecio);
-                   actual.getMulta().setMotivo(nmotivo);
-               }
-                else if (cambiarm){
-                   actual.getMulta().setMotivo(nmotivo);
-               }else  if(cambiarp){
-                   actual.getMulta().setPrecio(nprecio);
-
-               }
-
-
-               return true;
-           }
-
-           if (id<actual.getMulta().getId()){
-               return actualizar(actual.getIzq(),id,nprecio,nmotivo,cambiarp,cambiarm);
-           }else {
-               return actualizar(actual.getDer(),id,nprecio,nmotivo,cambiarp,cambiarm);
-           }
-
-
-
-   }
-
-    //Eliminar un nodo de la lista
-    public void eliminar( int id){
-        raiz=eliminar(raiz,id);
-    }
-
-    private Nodomulta eliminar(Nodomulta actual, int id){
-       if (actual==null){
-           return null;
-       }
-       if (id<actual.getMulta().getId()){
-           actual.setIzq(eliminar(actual.getIzq(),id));
-       } else if (id>actual.getMulta().getId()) {
-           actual.setDer(eliminar(actual.getDer(),id));
-
-       }else {
-              if (actual.getIzq()==null && actual.getDer()==null){
-                  return null;
-              }
-
-              if (actual.getDer()== null){
-                  return actual.getIzq();
-              }
-              if (actual.getIzq()==null){
-                  return actual.getDer();
-              }
-
-              Nodomulta suce=encontrarMinimo(actual.getDer());
-              actual.getMulta().setPrecio(suce.getMulta().getPrecio());
-              actual.getMulta().setMotivo(suce.getMulta().getMotivo());
-              actual.getMulta().setId(suce.getMulta().getId());
-
-              actual.setDer(eliminar(actual.getDer(),suce.getMulta().getId()));
-
-       }
-       return actual;
-
-
-    }
-    private Nodomulta encontrarMinimo(Nodomulta actual){
-
-        while (actual.getIzq() != null) {
-            actual = actual.getIzq();
+        if (multa == null) {
+            throw new IllegalArgumentException("La multa no puede ser nula.");
         }
 
-        return actual;
+        vehiculo.agregarMulta(multa);
+        return true;
     }
 
+    public String generarReporteHistorial(Vehiculo vehiculo) {
+        if (vehiculo == null) {
+            return "Vehículo inválido.";
+        }
 
+        List<Multas> historial = vehiculo.getHistorialMultas();
+        if (historial.isEmpty()) {
+            return "No hay multas registradas para este vehículo.";
+        }
 
+        StringBuilder reporte = new StringBuilder("Historial de infracciones:\n");
+        for (Multas multa : historial) {
+            reporte.append(multa.toString()).append("\n");
+        }
+        return reporte.toString();
+    }
 
+    public List<Multas> obtenerHistorial(Vehiculo vehiculo) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("El vehiculo no puede ser nulo.");
+        }
+        return vehiculo.getHistorialMultas();
+    }
 
+    public boolean actualizarMulta(Vehiculo vehiculo, int multaId, double nuevoPrecio, String nuevoMotivo) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("El vehículo no puede ser nulo.");
+        }
+
+        return vehiculo.actualizarMulta(multaId, nuevoPrecio, nuevoMotivo);
+    }
+
+    public boolean eliminarMulta(Vehiculo vehiculo, int multaId) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("El vehículo no puede ser nulo.");
+        }
+
+        return vehiculo.eliminarMulta(multaId);
+    }
+
+    public Multas buscarMulta(Vehiculo vehiculo, int multaId) {
+        if (vehiculo == null) {
+            throw new IllegalArgumentException("El vehículo no puede ser nulo.");
+        }
+        return vehiculo.buscarMulta(multaId);
+    }
 }

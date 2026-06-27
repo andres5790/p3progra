@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Ventana">
+  <grid id="a000" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="1" column-count="1">
+    <margin top="0" left="0" bottom="0" right="0" />
+    <constraints>
+      <xy x="20" y="20" width="1120" height="720" />
+      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+    </constraints>
+    <properties />
+    <border type="none" />
+    <children>
+      <tabbedpane id="a001" binding="tabbedPane">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+        </constraints>
+        <properties />
+        <border type="none" />
+        <children>
+          <grid id="v400" binding="panelVehiculos" layout-manager="GridLayoutManager" row-count="3" column-count="1">
+            <margin top="10" left="10" bottom="10" right="10" />
+            <constraints>
+              <tabbedpane title="Vehículos/Árboles" />
+            </constraints>
+            <properties />
+            <border type="none" />
+            <children>
+              <grid id="v401" layout-manager="GridLayoutManager" row-count="3" column-count="4">
+                <margin top="0" left="0" bottom="0" right="0" />
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="v402" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Placa" />
+                    </properties>
+                  </component>
+                  <component id="v403" class="javax.swing.JTextField" binding="txtVehiculoPlaca">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="v404" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Año" />
+                    </properties>
+                  </component>
+                  <component id="v405" class="javax.swing.JTextField" binding="txtVehiculoAnio">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="v406" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Cedula propietario" />
+                    </properties>
+                  </component>
+                  <component id="v407" class="javax.swing.JTextField" binding="txtVehiculoCedula">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="v408" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Propietario" />
+                    </properties>
+                  </component>
+                  <component id="v409" class="javax.swing.JTextField" binding="txtVehiculoPropietario">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                  <component id="v410" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Deuda" />
+                    </properties>
+                  </component>
+                  <component id="v411" class="javax.swing.JTextField" binding="txtVehiculoDeuda">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="v420" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="v421" class="javax.swing.JButton" binding="btnVehiculoRegistrar">
+                    <constraints />
+                    <properties>
+                      <text value="Registrar" />
+                    </properties>
+                  </component>
+                  <component id="v422" class="javax.swing.JButton" binding="btnVehiculoBuscar">
+                    <constraints />
+                    <properties>
+                      <text value="Buscar" />
+                    </properties>
+                  </component>
+                  <component id="v423" class="javax.swing.JButton" binding="btnVehiculoActualizar">
+                    <constraints />
+                    <properties>
+                      <text value="Actualizar" />
+                    </properties>
+                  </component>
+                  <component id="v424" class="javax.swing.JButton" binding="btnVehiculoEliminar">
+                    <constraints />
+                    <properties>
+                      <text value="Eliminar" />
+                    </properties>
+                  </component>
+                  <component id="v425" class="javax.swing.JButton" binding="btnVehiculoLimpiar">
+                    <constraints />
+                    <properties>
+                      <text value="Limpiar" />
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <scrollpane id="v430">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="v431" class="javax.swing.JTable" binding="tblVehiculos">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="m300" binding="panelInfracciones" layout-manager="GridLayoutManager" row-count="3" column-count="1">
+            <margin top="10" left="10" bottom="10" right="10" />
+            <constraints>
+              <tabbedpane title="Infracciones/Listas" />
+            </constraints>
+            <properties />
+            <border type="none" />
+            <children>
+              <grid id="m301" layout-manager="GridLayoutManager" row-count="3" column-count="4">
+                <margin top="0" left="0" bottom="0" right="0" />
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="m302" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Placa" />
+                    </properties>
+                  </component>
+                  <component id="m303" class="javax.swing.JTextField" binding="txtMultaPlaca">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="m304" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="ID multa" />
+                    </properties>
+                  </component>
+                  <component id="m305" class="javax.swing.JTextField" binding="txtMultaId">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="m306" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Monto" />
+                    </properties>
+                  </component>
+                  <component id="m307" class="javax.swing.JTextField" binding="txtMultaPrecio">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="m308" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Motivo" />
+                    </properties>
+                  </component>
+                  <component id="m309" class="javax.swing.JTextField" binding="txtMultaMotivo">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                  <component id="m310" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Empleado ID" />
+                    </properties>
+                  </component>
+                  <component id="m311" class="javax.swing.JTextField" binding="txtMultaEmpleadoId">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="m312" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Empleado" />
+                    </properties>
+                  </component>
+                  <component id="m313" class="javax.swing.JTextField" binding="txtMultaEmpleadoNombre">
+                    <constraints>
+                      <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="m320" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="m321" class="javax.swing.JButton" binding="btnMultaRegistrar">
+                    <constraints />
+                    <properties>
+                      <text value="Registrar" />
+                    </properties>
+                  </component>
+                  <component id="m322" class="javax.swing.JButton" binding="btnMultaBuscar">
+                    <constraints />
+                    <properties>
+                      <text value="Buscar" />
+                    </properties>
+                  </component>
+                  <component id="m323" class="javax.swing.JButton" binding="btnMultaActualizar">
+                    <constraints />
+                    <properties>
+                      <text value="Actualizar" />
+                    </properties>
+                  </component>
+                  <component id="m324" class="javax.swing.JButton" binding="btnMultaEliminar">
+                    <constraints />
+                    <properties>
+                      <text value="Eliminar" />
+                    </properties>
+                  </component>
+                  <component id="m325" class="javax.swing.JButton" binding="btnMultaLimpiar">
+                    <constraints />
+                    <properties>
+                      <text value="Limpiar" />
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <scrollpane id="m330">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="m331" class="javax.swing.JTable" binding="tblMultas">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="p100" binding="panelPagos" layout-manager="GridLayoutManager" row-count="3" column-count="1">
+            <margin top="10" left="10" bottom="10" right="10" />
+            <constraints>
+              <tabbedpane title="Solvencia/Pilas" />
+            </constraints>
+            <properties />
+            <border type="none" />
+            <children>
+              <grid id="p101" layout-manager="GridLayoutManager" row-count="2" column-count="4">
+                <margin top="0" left="0" bottom="0" right="0" />
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="p102" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Cedula" />
+                    </properties>
+                  </component>
+                  <component id="p103" class="javax.swing.JTextField" binding="txtPagoCedula">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="p104" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Ciudadano" />
+                    </properties>
+                  </component>
+                  <component id="p105" class="javax.swing.JTextField" binding="txtPagoNombre">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                  <component id="p106" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Deuda inicial" />
+                    </properties>
+                  </component>
+                  <component id="p107" class="javax.swing.JTextField" binding="txtPagoDeuda">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="p108" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Monto pago" />
+                    </properties>
+                  </component>
+                  <component id="p109" class="javax.swing.JTextField" binding="txtPagoMonto">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="p120" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="p121" class="javax.swing.JButton" binding="btnPagoRegistrar">
+                    <constraints />
+                    <properties>
+                      <text value="Registrar pago" />
+                    </properties>
+                  </component>
+                  <component id="p122" class="javax.swing.JButton" binding="btnPagoVerUltimo">
+                    <constraints />
+                    <properties>
+                      <text value="Ver ultimo" />
+                    </properties>
+                  </component>
+                  <component id="p123" class="javax.swing.JButton" binding="btnPagoAnular">
+                    <constraints />
+                    <properties>
+                      <text value="Anular ultimo" />
+                    </properties>
+                  </component>
+                  <component id="p124" class="javax.swing.JButton" binding="btnPagoLimpiar">
+                    <constraints />
+                    <properties>
+                      <text value="Limpiar" />
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <scrollpane id="p130">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="p131" class="javax.swing.JTable" binding="tblPagos">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="t200" binding="panelTramites" layout-manager="GridLayoutManager" row-count="3" column-count="1">
+            <margin top="10" left="10" bottom="10" right="10" />
+            <constraints>
+              <tabbedpane title="Trámites/Colas" />
+            </constraints>
+            <properties />
+            <border type="none" />
+            <children>
+              <grid id="t201" layout-manager="GridLayoutManager" row-count="3" column-count="4">
+                <margin top="0" left="0" bottom="0" right="0" />
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="t202" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Cedula" />
+                    </properties>
+                  </component>
+                  <component id="t203" class="javax.swing.JTextField" binding="txtTramiteCedula">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="t204" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Ciudadano" />
+                    </properties>
+                  </component>
+                  <component id="t205" class="javax.swing.JTextField" binding="txtTramiteNombre">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="t206" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Empleado ID" />
+                    </properties>
+                  </component>
+                  <component id="t207" class="javax.swing.JTextField" binding="txtTramiteEmpleadoId">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="t208" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Empleado" />
+                    </properties>
+                  </component>
+                  <component id="t209" class="javax.swing.JTextField" binding="txtTramiteEmpleadoNombre">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                  <component id="t210" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Tipo" />
+                    </properties>
+                  </component>
+                  <component id="t211" class="javax.swing.JComboBox" binding="cmbTramiteTipo">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties />
+                  </component>
+                </children>
+              </grid>
+              <grid id="t220" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="t221" class="javax.swing.JButton" binding="btnTramiteEncolar">
+                    <constraints />
+                    <properties>
+                      <text value="Encolar" />
+                    </properties>
+                  </component>
+                  <component id="t222" class="javax.swing.JButton" binding="btnTramiteIniciar">
+                    <constraints />
+                    <properties>
+                      <text value="Iniciar frente" />
+                    </properties>
+                  </component>
+                  <component id="t223" class="javax.swing.JButton" binding="btnTramiteFinalizar">
+                    <constraints />
+                    <properties>
+                      <text value="Finalizar frente" />
+                    </properties>
+                  </component>
+                  <component id="t224" class="javax.swing.JButton" binding="btnTramiteCancelar">
+                    <constraints />
+                    <properties>
+                      <text value="Cancelar" />
+                    </properties>
+                  </component>
+                  <component id="t225" class="javax.swing.JButton" binding="btnTramiteLimpiar">
+                    <constraints />
+                    <properties>
+                      <text value="Limpiar" />
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <scrollpane id="t230">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="t231" class="javax.swing.JTable" binding="tblTramites">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+          <grid id="z500" binding="panelZonas" layout-manager="GridLayoutManager" row-count="3" column-count="3">
+            <margin top="10" left="10" bottom="10" right="10" />
+            <constraints>
+              <tabbedpane title="Zonas/Grafos" />
+            </constraints>
+            <properties />
+            <border type="none" />
+            <children>
+              <grid id="z501" layout-manager="GridLayoutManager" row-count="2" column-count="4">
+                <margin top="0" left="0" bottom="0" right="0" />
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="z502" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="ID zona" />
+                    </properties>
+                  </component>
+                  <component id="z503" class="javax.swing.JTextField" binding="txtZonaId">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="z504" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Direccion" />
+                    </properties>
+                  </component>
+                  <component id="z505" class="javax.swing.JTextField" binding="txtZonaDireccion">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                  <component id="z506" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Tipo" />
+                    </properties>
+                  </component>
+                  <component id="z507" class="javax.swing.JTextField" binding="txtZonaTipo">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="z508" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Causa" />
+                    </properties>
+                  </component>
+                  <component id="z509" class="javax.swing.JTextField" binding="txtZonaCausa">
+                    <constraints>
+                      <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="22" /></properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="z510" layout-manager="GridLayoutManager" row-count="2" column-count="4">
+                <margin top="0" left="0" bottom="0" right="0" />
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="z511" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Origen" />
+                    </properties>
+                  </component>
+                  <component id="z512" class="javax.swing.JTextField" binding="txtZonaOrigen">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="z513" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Destino" />
+                    </properties>
+                  </component>
+                  <component id="z514" class="javax.swing.JTextField" binding="txtZonaDestino">
+                    <constraints>
+                      <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                  <component id="z515" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties>
+                      <text value="Distancia km" />
+                    </properties>
+                  </component>
+                  <component id="z516" class="javax.swing.JTextField" binding="txtZonaDistancia">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false" />
+                    </constraints>
+                    <properties><columns value="16" /></properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="z520" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="2" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="z521" class="javax.swing.JButton" binding="btnZonaRegistrar">
+                    <constraints />
+                    <properties>
+                      <text value="Registrar zona" />
+                    </properties>
+                  </component>
+                  <component id="z522" class="javax.swing.JButton" binding="btnZonaActualizar">
+                    <constraints />
+                    <properties>
+                      <text value="Actualizar zona" />
+                    </properties>
+                  </component>
+                  <component id="z523" class="javax.swing.JButton" binding="btnZonaEliminar">
+                    <constraints />
+                    <properties>
+                      <text value="Eliminar zona" />
+                    </properties>
+                  </component>
+                  <component id="z524" class="javax.swing.JButton" binding="btnZonaConectar">
+                    <constraints />
+                    <properties>
+                      <text value="Conectar" />
+                    </properties>
+                  </component>
+                  <component id="z525" class="javax.swing.JButton" binding="btnZonaActualizarConexion">
+                    <constraints />
+                    <properties>
+                      <text value="Actualizar conexion" />
+                    </properties>
+                  </component>
+                  <component id="z526" class="javax.swing.JButton" binding="btnZonaEliminarConexion">
+                    <constraints />
+                    <properties>
+                      <text value="Eliminar conexion" />
+                    </properties>
+                  </component>
+                  <component id="z527" class="javax.swing.JButton" binding="btnZonaRuta">
+                    <constraints />
+                    <properties>
+                      <text value="Calcular ruta" />
+                    </properties>
+                  </component>
+                  <component id="z528" class="javax.swing.JButton" binding="btnZonaLimpiar">
+                    <constraints />
+                    <properties>
+                      <text value="Limpiar" />
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <scrollpane id="z530">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="z531" class="javax.swing.JTable" binding="tblZonas">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+              <scrollpane id="z540">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="z541" class="javax.swing.JTable" binding="tblConexiones">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+              <scrollpane id="z550">
+                <constraints>
+                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false" />
+                </constraints>
+                <properties />
+                <border type="none" />
+                <children>
+                  <component id="z551" class="javax.swing.JTable" binding="tblRuta">
+                    <constraints />
+                    <properties />
+                  </component>
+                </children>
+              </scrollpane>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>
