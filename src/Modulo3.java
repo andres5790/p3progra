@@ -105,10 +105,10 @@ public class Modulo3 {
               }
 
               if (actual.getDer()== null){
-                  return actual.getDer();
+                  return actual.getIzq();
               }
               if (actual.getIzq()==null){
-                  return actual.getIzq();
+                  return actual.getDer();
               }
 
               Nodomulta suce=encontrarMinimo(actual.getDer());
