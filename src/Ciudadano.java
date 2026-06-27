@@ -1,20 +1,20 @@
 public class Ciudadano {
-    private int id;
+    private int cedula;
     private String nombre;
     private double deudat;
 
-    public Ciudadano(int id, String nombre,double deudat) {
-        this.id = id;
+    public Ciudadano(int cedula, String nombre,double deudat) {
+        this.cedula = cedula;
         this.nombre = nombre;
         this.deudat=deudat;
     }
 
-    public int getId() {
-        return id;
+    public int getCedula() {
+        return cedula;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
     }
 
     public String getNombre() {
@@ -36,7 +36,7 @@ public class Ciudadano {
     @Override
     public String toString() {
         return "Ciudadano{" +
-                "id=" + id +
+                "cedula=" + cedula +
                 ", nombre='" + nombre + '\'' +
                 ", deudat=" + deudat +
                 '}';

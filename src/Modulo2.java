@@ -13,7 +13,7 @@ public class Modulo2 {
             return true;
         }
         for (Tramite t : tramites) {
-            if (t.getCiudadano().getId()==tramite.getCiudadano().getId()
+            if (t.getCiudadano().getCedula()==tramite.getCiudadano().getCedula()
                     && t.getTipo()==tramite.getTipo()
                     && t.getEstado() != Estado.FINALIZADO) {
 
