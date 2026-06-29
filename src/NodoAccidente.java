@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class NodoAccidente {
-    private Accidente accidente;
-    private ArrayList<Conexionaccidente> conexion;
+    private final Accidente accidente;
+    private final List<Conexionaccidente> conexion;
 
     public NodoAccidente(Accidente accidente) {
         this.accidente = accidente;
@@ -13,11 +14,11 @@ public class NodoAccidente {
         return accidente;
     }
 
-    public ArrayList<Conexionaccidente> getConexion() {
+    public List<Conexionaccidente> getConexion() {
         return conexion;
     }
-    public  void agregarconexiones(Conexionaccidente c){
-        conexion.add(c);
 
+    public void agregarConexion(Conexionaccidente conexion) {
+        this.conexion.add(conexion);
     }
 }

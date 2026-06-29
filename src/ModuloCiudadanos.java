@@ -1,17 +1,28 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class ModuloCiudadanos {
 
-        private ArrayList<Ciudadano> ciudadanos;
+    private final ArrayList<Ciudadano> ciudadanos;
 
-        public ModuloCiudadanos() {
-            ciudadanos = new ArrayList<>();
+    public ModuloCiudadanos() {
+        ciudadanos = new ArrayList<>();
+    }
+
+    // REGISTRAR CIUDADANO
+    public boolean registrarCiudadano(Ciudadano ciudadano) {
+
+        if (ciudadano == null) {
+            return false;
         }
 
-    public boolean registrarCiudadano(Ciudadano ciudadano){
+        if (!ValidationUtils.isValidCedula(ciudadano.getCedula())) {
+            return false;
+        }
 
+        // evitar duplicados por cédula
         for (Ciudadano c : ciudadanos) {
-            if (c.getCedula()==ciudadano.getCedula()) {
+            if (c.getCedula().equals(ciudadano.getCedula())) {
                 return false;
             }
         }
@@ -20,13 +31,15 @@ public class ModuloCiudadanos {
         return true;
     }
 
-    public ArrayList<Ciudadano> getCiudadanos() {
-        return ciudadanos;
-    }
-    public Ciudadano buscarCedula(int id){
+    // BUSCAR POR CÉDULA
+    public Ciudadano buscarCedula(String cedula) {
 
-        for (Ciudadano c : ciudadanos){
-            if(c.getCedula()==id){
+        if (!ValidationUtils.isValidCedula(cedula)) {
+            return null;
+        }
+
+        for (Ciudadano c : ciudadanos) {
+            if (c.getCedula().equals(cedula)) {
                 return c;
             }
         }
@@ -34,4 +47,8 @@ public class ModuloCiudadanos {
         return null;
     }
 
+    // LISTA SEGURA (NO MODIFICABLE)
+    public List<Ciudadano> getCiudadanos() {
+        return new ArrayList<>(ciudadanos);
+    }
 }

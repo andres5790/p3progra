@@ -1,48 +1,49 @@
 import java.time.LocalDate;
 
 public class Pago {
-    private int idp;
-    private int cantidad;
-    private Ciudadano ciudadano;
-    private String fecha;
+    private final int idp;
+    private final double cantidad;
+    private final Ciudadano ciudadano;
+    private final LocalDate fecha;
 
-    public Pago(int idp,int cantidad, Ciudadano ciudadano, String fecha) {
-        this.idp=idp;
+    public Pago(int idp, double cantidad, Ciudadano ciudadano, LocalDate fecha) {
+        if (idp <= 0) {
+            throw new IllegalArgumentException("El identificador del pago debe ser positivo.");
+        }
+        if (!ValidationUtils.isValidMonto(cantidad)) {
+            throw new IllegalArgumentException("El monto del pago no puede ser negativo.");
+        }
+        if (ciudadano == null) {
+            throw new IllegalArgumentException("El pago debe asignarse a un ciudadano.");
+        }
+        if (fecha == null) {
+            throw new IllegalArgumentException("La fecha del pago no puede ser nula.");
+        }
+
+        this.idp = idp;
         this.cantidad = cantidad;
         this.ciudadano = ciudadano;
-        this.fecha=fecha;
+        this.fecha = fecha;
+    }
+
+    public Pago(int idp, double cantidad, Ciudadano ciudadano) {
+        this(idp, cantidad, ciudadano, LocalDate.now());
     }
 
     public int getIdp() {
         return idp;
     }
 
-    public void setIdp(int idp) {
-        this.idp = idp;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public int getCantidad() {
+    public double getCantidad() {
         return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public Ciudadano getCiudadano() {
         return ciudadano;
     }
 
-    public void setCiudadano(Ciudadano ciudadano) {
-        this.ciudadano = ciudadano;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
     @Override
@@ -51,7 +52,7 @@ public class Pago {
                 "idp=" + idp +
                 ", cantidad=" + cantidad +
                 ", ciudadano=" + ciudadano.getNombre() +
-                ", fecha='" + fecha + '\'' +
+                ", fecha=" + fecha +
                 '}';
     }
 }

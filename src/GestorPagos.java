@@ -24,16 +24,15 @@ public class GestorPagos {
         return pagos.peek();
     }
 
-    public  void estadodeuda(){
-         Pago pago=pagos.peek();
-         Ciudadano ciudadano=pago.getCiudadano();
-         ciudadano.setDeudat(ciudadano.getDeudat()- pago.getCantidad());
+    public void estadodeuda() {
+        Pago pago = pagos.peek();
+        Ciudadano ciudadano = pago.getCiudadano();
+        ciudadano.aplicarPago(pago.getCantidad());
     }
 
-    public  void anularpago(){
-        Pago pago=pagos.peek();
-        Ciudadano ciudadano=pago.getCiudadano();
-        ciudadano.setDeudat(ciudadano.getDeudat()+ pago.getCantidad());
-        pagos.pop();
+    public void anularpago() {
+        Pago pago = pagos.pop();
+        Ciudadano ciudadano = pago.getCiudadano();
+        ciudadano.incrementarDeuda(pago.getCantidad());
     }
 }

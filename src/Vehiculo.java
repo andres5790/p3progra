@@ -1,47 +1,89 @@
-public class Vehiculo  {
-    private String placa;
-    private int anio;
-    private  Ciudadano propietario;
-    private int totalmultas;
+public class Vehiculo {
 
-    public Vehiculo(String placa, int anio, Ciudadano propietario, int totalmultas) {
-        this.placa = placa;
+    private final String placa;
+    private int anio;
+    private Ciudadano propietario;
+    private int totalMultas;
+
+    public Vehiculo(String placa, int anio, Ciudadano propietario) {
+
+        if (!ValidationUtils.isValidPlaca(placa)) {
+            throw new IllegalArgumentException("Placa inválida. Formato ABC-1234.");
+        }
+
+        if (!ValidationUtils.isValidAnio(anio)) {
+            throw new IllegalArgumentException("Año inválido para el vehículo.");
+        }
+
+        if (propietario == null) {
+            throw new IllegalArgumentException("El vehículo debe tener un propietario.");
+        }
+
+        this.placa = placa.trim().toUpperCase();
         this.anio = anio;
         this.propietario = propietario;
-        this.totalmultas = totalmultas;
+        this.totalMultas = 0;
     }
+
+    // =========================
+    // GETTERS
+    // =========================
 
     public String getPlaca() {
         return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public int getAnio() {
         return anio;
     }
 
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
     public Ciudadano getPropietario() {
         return propietario;
     }
 
+    public int getTotalMultas() {
+        return totalMultas;
+    }
+
+    // =========================
+    // SETTERS
+    // =========================
+
+    public void setAnio(int anio) {
+
+        if (!ValidationUtils.isValidAnio(anio)) {
+            throw new IllegalArgumentException("Año inválido.");
+        }
+
+        this.anio = anio;
+    }
+
     public void setPropietario(Ciudadano propietario) {
+
+        if (propietario == null) {
+            throw new IllegalArgumentException("Propietario inválido.");
+        }
+
         this.propietario = propietario;
     }
 
-    public int getTotalmultas() {
-        return totalmultas;
+    // =========================
+    // CONTROL DE MULTAS (SIN HISTORIAL)
+    // =========================
+
+    public void incrementarMultas() {
+        this.totalMultas++;
     }
 
-    public void setTotalmultas(int totalmultas) {
-        this.totalmultas = totalmultas;
+    public void disminuirMultas() {
+        if (this.totalMultas > 0) {
+            this.totalMultas--;
+        }
     }
+
+    // =========================
+    // TO STRING
+    // =========================
 
     @Override
     public String toString() {
@@ -49,7 +91,7 @@ public class Vehiculo  {
                 "placa='" + placa + '\'' +
                 ", anio=" + anio +
                 ", propietario=" + propietario.getNombre() +
-                ", totalmultas=" + totalmultas +
+                ", totalMultas=" + totalMultas +
                 '}';
     }
 }

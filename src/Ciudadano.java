@@ -1,20 +1,26 @@
 public class Ciudadano {
-    private int cedula;
+    private final String cedula;
     private String nombre;
-    private double deudat;
+    private double deuda;
 
-    public Ciudadano(int cedula, String nombre,double deudat) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.deudat=deudat;
+    public Ciudadano(String cedula, String nombre, double deuda) {
+        if (!ValidationUtils.isValidCedula(cedula)) {
+            throw new IllegalArgumentException("Cédula inválida. Debe contener exactamente 10 dígitos.");
+        }
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        if (!ValidationUtils.isValidMonto(deuda)) {
+            throw new IllegalArgumentException("La deuda no puede ser negativa.");
+        }
+
+        this.cedula = cedula.trim();
+        this.nombre = nombre.trim();
+        this.deuda = deuda;
     }
 
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
-    }
-
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
     }
 
     public String getNombre() {
@@ -22,23 +28,43 @@ public class Ciudadano {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        this.nombre = nombre.trim();
     }
 
-    public double getDeudat() {
-        return deudat;
+    public double getDeuda() {
+        return deuda;
     }
 
-    public void setDeudat(double deudat) {
-        this.deudat = deudat;
+    public void setDeuda(double deuda) {
+        if (!ValidationUtils.isValidMonto(deuda)) {
+            throw new IllegalArgumentException("La deuda no puede ser negativa.");
+        }
+        this.deuda = deuda;
+    }
+
+    public void aplicarPago(double monto) {
+        if (!ValidationUtils.isValidMonto(monto)) {
+            throw new IllegalArgumentException("El monto de pago no puede ser negativo.");
+        }
+        this.deuda = Math.max(0, this.deuda - monto);
+    }
+
+    public void incrementarDeuda(double monto) {
+        if (!ValidationUtils.isValidMonto(monto)) {
+            throw new IllegalArgumentException("El monto de deuda no puede ser negativo.");
+        }
+        this.deuda += monto;
     }
 
     @Override
     public String toString() {
         return "Ciudadano{" +
-                "cedula=" + cedula +
+                "cedula='" + cedula + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", deudat=" + deudat +
+                ", deuda=" + deuda +
                 '}';
     }
 }
