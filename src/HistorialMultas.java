@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-
-public class Modulo3 {
+public class HistorialMultas {
 
        private Nodomulta raiz;
-       public  Modulo3(){
+       public HistorialMultas(){
            raiz=null;
        }
 

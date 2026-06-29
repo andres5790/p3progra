@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-
-public class Modulo4 {
+public class RegistroVehicular {
 
     private Nodovehiculo raiz;
-    public  Modulo4(){
+    public RegistroVehicular(){
         raiz=null;
     }
 

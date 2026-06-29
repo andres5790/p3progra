@@ -1,9 +1,9 @@
 import java.util.Stack;
 
-public class Modulo1 {
+public class GestorPagos {
     private Stack<Pago> pagos;
 
-    public Modulo1(Stack<Pago> pagos) {
+    public GestorPagos(Stack<Pago> pagos) {
         this.pagos = pagos;
     }
 
@@ -12,7 +12,7 @@ public class Modulo1 {
             pagos.push(pago);
             return true;
         }else{
-            if (pago.getIdp()>pagos.getLast().getIdp()){
+            if (pago.getIdp()>pagos.peek().getIdp()){
                 pagos.push(pago);
                 return true;
             }

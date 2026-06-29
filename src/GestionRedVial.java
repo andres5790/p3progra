@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class Modulo5 {
+public class GestionRedVial {
 
     private ArrayList<NodoAccidente> nodos;
 
-    public Modulo5() {
+    public GestionRedVial() {
         nodos = new ArrayList<>();
     }
 
