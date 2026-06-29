@@ -10,8 +10,8 @@ import java.util.Stack;
 
 /**
  * Clase principal de la Interfaz Gráfica (GUI).
- * Actúa como el controlador que conecta la vista (.form) con la lógica de negocio
- * y las diferentes estructuras de datos (Árboles Binarios, Pilas, Colas y Grafos).
+ * Con la lógica de negocio
+ * y las diferentes estructuras de datos (Árboles Binarios, Pilas, Listas Enlazadas,  Colas y Grafos).
  */
 public class VentanaGestor {
 
